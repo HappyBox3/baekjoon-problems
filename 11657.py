@@ -9,8 +9,7 @@ def bellman_ford(start):
     # n번의 라운드를 반복
     for i in range(1, n + 1):
         # 매 라운드마다 모든 간선을 확인
-        for j in range(m):
-            now, next, cost = edges[j][0], edges[j][1], edges[j][2]
+        for now, next , cost in edges:
             # 현재 간선을 거쳐서 다른 노드로 이동하는 거리가 더 짧은 경우
             if dist[now] != INF and dist[next] > dist[now] + cost:
                 dist[next] = dist[now] + cost
